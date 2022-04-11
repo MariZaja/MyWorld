@@ -7,12 +7,13 @@
 
 
 class Organism {
-    int force;
-    int initiative;
-    int organismX, organismY;
     virtual void draw() const=0;
-    virtual void action();
-    virtual void colision();
+    virtual void action() const=0;
+    virtual void colision() const=0;
+protected:
+    int initiative;
+    int force;
+    int organismX, organismY;
 };
 
 

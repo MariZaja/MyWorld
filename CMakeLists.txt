@@ -3,4 +3,4 @@ project(MyWorld)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(MyWorld main.cpp World.cpp World.h Timeline.cpp Timeline.h Organism.cpp Organism.h God.cpp God.h)
+add_executable(MyWorld main.cpp World.cpp World.h Timeline.cpp Timeline.h Organism.h God.cpp God.h Plant.cpp Plant.h)
