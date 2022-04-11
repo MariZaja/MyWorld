@@ -4,8 +4,8 @@
 
 #include "World.h"
 
-World::World(int worldX, int worldY)
-    : worldX{ worldX }, worldY{ worldY } {
+World::World(int x, int y)
+    : worldX{ x }, worldY{ y } {
     std::cout << "World created" << std::endl;
     //standardowe organizmy
 }
@@ -21,4 +21,8 @@ bool World::action() {
     }
     else { return false; }
     return true;
+}
+
+void World::setArea() {
+    struct area_t area[worldX][worldY];
 }

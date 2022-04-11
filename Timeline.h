@@ -5,7 +5,6 @@
 #ifndef MYWORLD_TIMELINE_H
 #define MYWORLD_TIMELINE_H
 
-
 class Timeline {
     World* myWorld;
     int worldAge;

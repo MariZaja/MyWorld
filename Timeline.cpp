@@ -16,6 +16,7 @@ Timeline::~Timeline() {
 void Timeline::start() {
     while(myWorld->action()) {
         commentary();
+        worldAge++;
     }
 }
 
