@@ -7,9 +7,9 @@
 
 
 class Organism {
-    virtual void draw() const=0;
-    virtual void action() const=0;
-    virtual void colision() const=0;
+    virtual void draw() =0;
+    virtual void action() =0;
+    virtual void colision() =0;
 protected:
     int initiative;
     int force;

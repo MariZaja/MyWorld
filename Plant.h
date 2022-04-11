@@ -6,8 +6,9 @@
 #define MYWORLD_PLANT_H
 
 
-class Plant: private Organism {
+class Plant: public Organism {
     int probabilityOfSpreading;
+protected:
     Plant();
 };
 
