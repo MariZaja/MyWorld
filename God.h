@@ -1,13 +1,11 @@
 //
 // Created by Marysia on 11.04.2022.
 //
-#pragma once
+#ifndef MYWORLD_GOD_H
+#define MYWORLD_GOD_H
 #include <iostream>
 #include "Organism.h"
 #include <string>
-#ifndef MYWORLD_GOD_H
-#define MYWORLD_GOD_H
-
 
 class God {
 protected:
