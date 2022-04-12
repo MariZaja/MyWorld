@@ -17,5 +17,5 @@ void Dandelion::colision() {
 }
 
 void Dandelion::draw() {
-    std::cout << 'x';
+    std::cout << 'd';
 }

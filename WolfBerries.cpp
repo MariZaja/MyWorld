@@ -17,5 +17,5 @@ void WolfBerries::colision() {
 }
 
 void WolfBerries::draw() {
-    std::cout<< 'j';
+    std::cout<< 'b';
 }

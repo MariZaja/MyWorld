@@ -17,5 +17,5 @@ void Grass::colision() {
 }
 
 void Grass::draw() {
-    std::cout << 'w';
+    std::cout << 'r';
 }

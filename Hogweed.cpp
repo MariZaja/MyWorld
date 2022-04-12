@@ -17,5 +17,5 @@ void Hogweed::colision() {
 }
 
 void Hogweed::draw() {
-    std::cout<< 'Y';
+    std::cout<< 'h';
 }
