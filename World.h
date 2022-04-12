@@ -13,15 +13,12 @@ class Organism;
 class World {
     int worldX, worldY;
     int worldAge;
-    //std::vector < Organism > organisms;
-    struct area_t{
-        //Organism* resident;
-    };
+    Organism** organisms;
     void setArea();
     void printArea();
     bool action();
 public:
-    int i = 0;
+    int slowo = 0;
     World(int x, int y);
     ~World();
     void start();

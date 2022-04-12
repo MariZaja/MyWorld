@@ -8,7 +8,6 @@
 class World;
 
 class Organism {
-    virtual void draw() =0;
     virtual void action() =0;
     virtual void colision() =0;
 protected:
@@ -20,6 +19,7 @@ public:
     int getForce() const;
     int getInitiative() const;
     Organism(World& w);
+    virtual void draw() =0;
 };
 
 

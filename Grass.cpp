@@ -16,4 +16,6 @@ void Grass::colision() {
 
 }
 
-
+void Grass::draw() {
+    std::cout << 'w';
+}
