@@ -3,10 +3,12 @@
 //
 
 #include "World.h"
+#include "Grass.h"
 
 World::World(int x, int y)
-    : worldX{ x }, worldY{ y } {
+    : worldX{ x }, worldY{ y }, worldAge{ 1 } {
     std::cout << "World created" << std::endl;
+    Grass grass;
     //standardowe organizmy
 }
 
@@ -25,4 +27,22 @@ bool World::action() {
 
 void World::setArea() {
     struct area_t area[worldX][worldY];
+}
+
+void World::start() {
+    while(action()) {
+        commentary();
+        worldAge++;
+    }
+}
+
+void World::commentary() {
+    for (int i=0; i<24; i++){
+        std::cout << "*";
+    }
+    std::cout << '\n' << "komentarz" << std::endl;
+    for (int i=0; i<24; i++){
+        std::cout << "*";
+    }
+    std::cout << std::endl;
 }

@@ -8,6 +8,7 @@
 class Grass: public Plant {
     void action() override;
     void colision() override;
+public:
     Grass();
 };
 

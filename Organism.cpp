@@ -4,8 +4,8 @@
 
 #include "Organism.h"
 
-Organism::Organism(World *w) {
-    world = w;
+Organism::Organism(World *w)
+    : world{ w }{
 }
 
 int Organism::getInitiative() const {

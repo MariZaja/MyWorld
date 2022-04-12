@@ -8,7 +8,7 @@
 
 class Plant: public Organism {
     int probabilityOfSpreading;
-protected:
+public:
     Plant();
 };
 

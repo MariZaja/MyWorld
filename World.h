@@ -5,22 +5,25 @@
 #ifndef MYWORLD_WORLD_H
 #define MYWORLD_WORLD_H
 #include <iostream>
+#include <vector>
 #include "Organism.h"
-#include "God.h"
 
 class World {
     int worldX, worldY;
-    Organism* organisms;
+    int worldAge;
+    std::vector < Organism > organisms;
     typedef struct area_t{
         Organism* resident;
     };
     void setArea();
     void printArea();
+    bool action();
 public:
     int i = 0;
     World(int x, int y);
     ~World();
-    bool action();
+    void start();
+    void commentary();
 };
 
 
