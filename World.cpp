@@ -3,9 +3,21 @@
 //
 
 #include "World.h"
-#include "Organism.h"
 #include "Plant.h"
 #include "Grass.h"
+#include "Dandelion.h"
+#include "Guarana.h"
+#include "WolfBerries.h"
+#include "Hogweed.h"
+#include "Wolf.h"
+#include "Sheep.h"
+#include "Fox.h"
+#include "Turtle.h"
+#include "Antelope.h"
+
+#define START_NUMBER_OF_ORGANISMS 40
+#define DIFFRENT_ORGANISMS 10
+enum organismID {GRASS, DANDELION, GUARANA, WOLFBERRIES, HOGWEED, WOLF, SHEEP, FOX, TURTLE, ANTELOPE};
 
 World::World(int x, int y)
     : worldX{ x }, worldY{ y }, worldAge{ 1 } {
@@ -26,20 +38,25 @@ World::~World(){
 bool World::action() {
     if (slowo==0){
         std::cout << "World action" << std::endl;
+        printArea();
         slowo++;
     }
     else { return false; }
-    printArea();
     return true;
 }
 
 void World::setArea() {
-    Organism* g = new Grass(*this);
-    organisms[0] = organisms[2] = organisms[6] = organisms[8] = g;
+    int number, x, y;
+    for (int i = 0; i < START_NUMBER_OF_ORGANISMS; i++){
+        x = rand() % worldX;
+        y = rand() % worldY;
+        if (organisms[x*worldY+y]==NULL){
+            setNewOrganism(x, y, i%DIFFRENT_ORGANISMS);
+        }
+    }
 }
 
 void World::start() {
-    std::cout<<"action" << slowo << std::endl;
     while(action()) {
         commentary();
         worldAge++;
@@ -61,7 +78,7 @@ void World::printArea() {
     for (int y=0; y<worldY; y++){
         for (int x=0; x<worldX; x++){
             if (organisms[x*worldY+y]==NULL){
-                std::cout << 'o';
+                std::cout << '-';
             }
             else{
                 organisms[x*worldY+y]->draw();
@@ -69,4 +86,41 @@ void World::printArea() {
         }
         std::cout << std::endl;
     }
+}
+
+void World::setNewOrganism(int x, int y, int number) {
+    Organism* o;
+    switch (number){
+        case GRASS:
+            o = new Grass(*this);
+            break;
+        case DANDELION:
+            o = new Dandelion(*this);
+            break;
+        case GUARANA:
+            o = new Guarana(*this);
+            break;
+        case WOLFBERRIES:
+            o = new WolfBerries(*this);
+            break;
+        case HOGWEED:
+            o = new Hogweed(*this);
+            break;
+        case WOLF:
+            o = new Wolf(*this);
+            break;
+        case SHEEP:
+            o = new Sheep(*this);
+            break;
+        case FOX:
+            o = new Fox(*this);
+            break;
+        case TURTLE:
+            o = new Turtle(*this);
+            break;
+        case ANTELOPE:
+            o = new Antelope(*this);
+            break;
+    }
+    organisms[x*worldY+y] = o;
 }

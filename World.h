@@ -15,6 +15,7 @@ class World {
     int worldAge;
     Organism** organisms;
     void setArea();
+    void setNewOrganism(int x, int y, int number);
     void printArea();
     bool action();
 public:
