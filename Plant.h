@@ -9,7 +9,7 @@
 class Plant: public Organism {
     int probabilityOfSpreading;
 public:
-    Plant();
+    Plant(World &w);
 };
 
 

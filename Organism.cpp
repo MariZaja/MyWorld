@@ -4,7 +4,7 @@
 
 #include "Organism.h"
 
-Organism::Organism(World *w)
+Organism::Organism(World &w)
     : world{ w }{
 }
 

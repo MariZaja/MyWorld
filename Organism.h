@@ -5,6 +5,8 @@
 #define MYWORLD_ORGANISM_H
 #include "World.h"
 
+class World;
+
 class Organism {
     virtual void draw() =0;
     virtual void action() =0;
@@ -13,11 +15,11 @@ protected:
     int initiative;
     int force;
     int organismX, organismY;
-    World* world;
+    World& world;
 public:
     int getForce() const;
     int getInitiative() const;
-    Organism(World* w);
+    Organism(World& w);
 };
 
 

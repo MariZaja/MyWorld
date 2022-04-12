@@ -8,12 +8,14 @@
 #include <vector>
 #include "Organism.h"
 
+class Organism;
+
 class World {
     int worldX, worldY;
     int worldAge;
-    std::vector < Organism > organisms;
-    typedef struct area_t{
-        Organism* resident;
+    //std::vector < Organism > organisms;
+    struct area_t{
+        //Organism* resident;
     };
     void setArea();
     void printArea();

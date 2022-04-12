@@ -8,7 +8,6 @@
 World::World(int x, int y)
     : worldX{ x }, worldY{ y }, worldAge{ 1 } {
     std::cout << "World created" << std::endl;
-    Grass grass;
     //standardowe organizmy
 }
 
