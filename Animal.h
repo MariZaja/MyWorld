@@ -6,8 +6,9 @@
 #define MYWORLD_ANIMAL_H
 
 
-class Animal: private Organism {
-
+class Animal: public Organism {
+public:
+    Animal(World& w);
 };
 
 
