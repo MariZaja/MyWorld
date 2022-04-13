@@ -9,12 +9,14 @@
 #include <stdlib.h>
 #include <time.h>
 #include "Organism.h"
+#include "Console.h"
 
 class Organism;
 
 class World {
     int worldX, worldY;
     int worldAge;
+    Console* console;
     Organism** organisms;
     void setArea();
     void setNewOrganism(int x, int y, int number);

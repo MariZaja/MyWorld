@@ -15,6 +15,7 @@
 #include "Turtle.h"
 #include "Antelope.h"
 #include "Human.h"
+#include "Console.h"
 
 #define START_NUMBER_OF_ORGANISMS 40
 #define DIFFRENT_ORGANISMS 10
@@ -22,6 +23,7 @@ enum organismID {GRASS, DANDELION, GUARANA, WOLFBERRIES, HOGWEED, WOLF, SHEEP, F
 
 World::World(int x, int y)
     : worldX{ x }, worldY{ y }, worldAge{ 1 } {
+    console = new Console;
     organisms = new Organism*[worldX*worldY];
     for(int i = 0; i < worldX*worldY; i++) {
         organisms[i] = NULL;
@@ -37,10 +39,13 @@ World::~World(){
 }
 
 bool World::action() {
-    if (slowo==0){
+    if (console->readInstruction()) {
+        //human->setDirection(console->getInstruction());
+
+        system("cls");
+
         std::cout << "World action" << std::endl;
         printArea();
-        slowo++;
     }
     else { return false; }
     return true;
@@ -88,6 +93,7 @@ void World::printArea() {
             else{
                 organisms[x*worldY+y]->draw();
             }
+            std::cout << ' ';
         }
         std::cout << std::endl;
     }

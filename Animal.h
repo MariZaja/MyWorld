@@ -5,7 +5,6 @@
 #ifndef MYWORLD_ANIMAL_H
 #define MYWORLD_ANIMAL_H
 
-
 class Animal: public Organism {
     void action() override;
 public:
