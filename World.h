@@ -6,6 +6,8 @@
 #define MYWORLD_WORLD_H
 #include <iostream>
 #include <vector>
+#include <stdlib.h>
+#include <time.h>
 #include "Organism.h"
 
 class Organism;

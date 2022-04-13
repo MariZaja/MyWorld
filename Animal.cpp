@@ -5,4 +5,9 @@
 #include "Animal.h"
 
 Animal::Animal(World &w) : Organism(w) {
+
+}
+
+void Animal::action() {
+
 }

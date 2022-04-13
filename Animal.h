@@ -7,6 +7,7 @@
 
 
 class Animal: public Organism {
+    void action() override;
 public:
     Animal(World& w);
 };

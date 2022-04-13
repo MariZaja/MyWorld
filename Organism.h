@@ -13,11 +13,13 @@ class Organism {
 protected:
     int initiative;
     int force;
+    int age;
     int organismX, organismY;
     World& world;
 public:
     int getForce() const;
     int getInitiative() const;
+    int getAge() const;
     Organism(World& w);
     virtual void draw() =0;
 };

@@ -14,6 +14,7 @@
 #include "Fox.h"
 #include "Turtle.h"
 #include "Antelope.h"
+#include "Human.h"
 
 #define START_NUMBER_OF_ORGANISMS 40
 #define DIFFRENT_ORGANISMS 10
@@ -46,6 +47,10 @@ bool World::action() {
 }
 
 void World::setArea() {
+    srand (time(NULL));
+    Organism* o;
+    o = new Human(*this);
+    organisms[0] = o;
     int number, x, y;
     for (int i = 0; i < START_NUMBER_OF_ORGANISMS; i++){
         x = rand() % worldX;

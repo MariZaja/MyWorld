@@ -6,6 +6,7 @@
 
 Organism::Organism(World &w)
     : world{ w }{
+    age = 1;
 }
 
 int Organism::getInitiative() const {
@@ -14,4 +15,8 @@ int Organism::getInitiative() const {
 
 int Organism::getForce() const{
     return force;
+}
+
+int Organism::getAge() const{
+    return age;
 }
