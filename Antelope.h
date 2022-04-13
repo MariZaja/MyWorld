@@ -11,7 +11,7 @@ class Antelope: public Animal {
     void colision() override;
     void draw() override;
 public:
-    Antelope(World& w);
+    Antelope(World& w, int x, int y);
 };
 
 

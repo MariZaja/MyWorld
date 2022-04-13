@@ -4,7 +4,7 @@
 
 #include "Human.h"
 
-Human::Human(World &w) : Animal(w) {
+Human::Human(World &w, int x, int y) : Animal(w, x, y) {
     force = 5;
     initiative = 4;
 }

@@ -4,7 +4,7 @@
 
 #include "Hogweed.h"
 
-Hogweed::Hogweed(World &w) : Plant(w) {
+Hogweed::Hogweed(World &w, int x, int y) : Plant(w, x, y) {
     force = 10;
 }
 

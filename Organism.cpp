@@ -4,8 +4,8 @@
 
 #include "Organism.h"
 
-Organism::Organism(World &w)
-    : world{ w }{
+Organism::Organism(World &w, int x, int y)
+    : organismX{ x }, organismY{ y }, world{ w }{
     age = 1;
 }
 

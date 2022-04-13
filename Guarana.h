@@ -11,7 +11,7 @@ class Guarana: public Plant {
     void colision() override;
     void draw() override;
 public:
-    Guarana(World& w);
+    Guarana(World& w, int x, int y);
 };
 
 

@@ -8,7 +8,7 @@
 class Animal: public Organism {
     void action() override;
 public:
-    Animal(World& w);
+    Animal(World& w, int x, int y);
 };
 
 

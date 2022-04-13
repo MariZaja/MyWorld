@@ -4,7 +4,7 @@
 
 #include "Turtle.h"
 
-Turtle::Turtle(World &w) : Animal(w) {
+Turtle::Turtle(World &w, int x, int y) : Animal(w, x, y) {
     force = 2;
     initiative = 1;
 }

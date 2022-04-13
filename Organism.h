@@ -20,7 +20,7 @@ public:
     int getForce() const;
     int getInitiative() const;
     int getAge() const;
-    Organism(World& w);
+    Organism(World& w, int x, int y);
     virtual void draw() =0;
 };
 

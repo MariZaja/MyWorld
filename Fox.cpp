@@ -4,7 +4,7 @@
 
 #include "Fox.h"
 
-Fox::Fox(World &w) : Animal(w) {
+Fox::Fox(World &w, int x, int y) : Animal(w, x, y) {
     force = 3;
     initiative = 7;
 }

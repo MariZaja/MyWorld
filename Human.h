@@ -11,7 +11,7 @@ class Human: public Animal {
     void colision() override;
     void draw() override;
 public:
-    Human(World& w);
+    Human(World& w, int x, int y);
 };
 
 

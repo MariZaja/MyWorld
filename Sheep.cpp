@@ -4,7 +4,7 @@
 
 #include "Sheep.h"
 
-Sheep::Sheep(World &w) : Animal(w) {
+Sheep::Sheep(World &w, int x, int y) : Animal(w, x, y) {
     force = 4;
     initiative = 4;
 }

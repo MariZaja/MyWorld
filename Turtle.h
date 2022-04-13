@@ -11,7 +11,7 @@ class Turtle: public Animal {
     void colision() override;
     void draw() override;
 public:
-    Turtle(World& w);
+    Turtle(World& w, int x, int y);
 };
 
 

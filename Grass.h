@@ -10,7 +10,7 @@ class Grass: public Plant {
     void colision() override;
     void draw() override;
 public:
-    Grass(World& w);
+    Grass(World& w, int x, int y);
 };
 
 

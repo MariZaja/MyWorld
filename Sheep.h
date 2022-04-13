@@ -11,7 +11,7 @@ class Sheep: public Animal {
     void colision() override;
     void draw() override;
 public:
-    Sheep(World& w);
+    Sheep(World& w, int x, int y);
 };
 
 

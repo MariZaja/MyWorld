@@ -4,7 +4,7 @@
 
 #include "Animal.h"
 
-Animal::Animal(World &w) : Organism(w) {
+Animal::Animal(World &w, int x, int y) : Organism(w, x, y) {
 
 }
 

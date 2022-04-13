@@ -4,7 +4,7 @@
 
 #include "Antelope.h"
 
-Antelope::Antelope(World &w) : Animal(w) {
+Antelope::Antelope(World &w, int x, int y) : Animal(w, x, y) {
     force = 4;
     initiative = 4;
 }

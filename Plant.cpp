@@ -4,6 +4,6 @@
 
 #include "Plant.h"
 
-Plant::Plant(World &w) : Organism(w) {
+Plant::Plant(World &w, int x, int y) : Organism(w, x, y) {
     initiative = 0;
 }

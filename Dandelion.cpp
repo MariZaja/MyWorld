@@ -4,7 +4,7 @@
 
 #include "Dandelion.h"
 
-Dandelion::Dandelion(World &w) : Plant(w) {
+Dandelion::Dandelion(World &w, int x, int y) : Plant(w, x, y) {
     force = 0;
 }
 

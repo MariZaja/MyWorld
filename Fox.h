@@ -11,7 +11,7 @@ class Fox: public Animal {
     void colision() override;
     void draw() override;
 public:
-    Fox(World& w);
+    Fox(World& w, int x, int y);
 };
 
 

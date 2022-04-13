@@ -11,7 +11,7 @@ class WolfBerries: public Plant {
     void colision() override;
     void draw() override;
 public:
-    WolfBerries(World& w);
+    WolfBerries(World& w, int x, int y);
 };
 
 

@@ -4,7 +4,7 @@
 
 #include "WolfBerries.h"
 
-WolfBerries::WolfBerries(World &w) : Plant(w) {
+WolfBerries::WolfBerries(World &w, int x, int y) : Plant(w, x, y) {
     force = 99;
 }
 

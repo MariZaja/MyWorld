@@ -11,7 +11,7 @@ class Hogweed: public Plant {
     void colision() override;
     void draw() override;
 public:
-    Hogweed(World& w);
+    Hogweed(World& w, int x, int y);
 };
 
 

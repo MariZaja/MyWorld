@@ -4,7 +4,7 @@
 
 #include "Grass.h"
 
-Grass::Grass(World& w): Plant(w) {
+Grass::Grass(World& w, int x, int y): Plant(w, x, y) {
     force = 0;
 }
 

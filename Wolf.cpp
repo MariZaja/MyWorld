@@ -4,7 +4,7 @@
 
 #include "Wolf.h"
 
-Wolf::Wolf(World &w) : Animal(w) {
+Wolf::Wolf(World &w, int x, int y) : Animal(w, x, y) {
     force = 9;
     initiative = 5;
 }
