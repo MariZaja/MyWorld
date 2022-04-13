@@ -14,10 +14,8 @@
 #include "Fox.h"
 #include "Turtle.h"
 #include "Antelope.h"
-#include "Human.h"
-#include "Console.h"
 
-#define START_NUMBER_OF_ORGANISMS 40
+#define START_NUMBER_OF_ORGANISMS 300
 #define DIFFRENT_ORGANISMS 10
 enum organismID {GRASS, DANDELION, GUARANA, WOLFBERRIES, HOGWEED, WOLF, SHEEP, FOX, TURTLE, ANTELOPE};
 
@@ -28,6 +26,7 @@ World::World(int x, int y)
     for(int i = 0; i < worldX*worldY; i++) {
         organisms[i] = NULL;
     }
+    //human = new Human(*this, 0, 0);
     setArea();
     std::cout << "World created" << std::endl;
     //standardowe organizmy
@@ -41,6 +40,7 @@ World::~World(){
 bool World::action() {
     if (console->readInstruction()) {
         //human->setDirection(console->getInstruction());
+        //human->action();
 
         system("cls");
 
@@ -53,10 +53,8 @@ bool World::action() {
 
 void World::setArea() {
     srand (time(NULL));
-    Organism* o;
-    o = new Human(*this);
-    organisms[0] = o;
-    int number, x, y;
+    //organisms[0] = human;
+    int x, y;
     for (int i = 0; i < START_NUMBER_OF_ORGANISMS; i++){
         x = rand() % worldX;
         y = rand() % worldY;
@@ -103,35 +101,50 @@ void World::setNewOrganism(int x, int y, int number) {
     Organism* o;
     switch (number){
         case GRASS:
-            o = new Grass(*this);
+            o = new Grass(*this, x, y);
             break;
         case DANDELION:
-            o = new Dandelion(*this);
+            o = new Dandelion(*this, x, y);
             break;
         case GUARANA:
-            o = new Guarana(*this);
+            o = new Guarana(*this, x, y);
             break;
         case WOLFBERRIES:
-            o = new WolfBerries(*this);
+            o = new WolfBerries(*this, x, y);
             break;
         case HOGWEED:
-            o = new Hogweed(*this);
+            o = new Hogweed(*this, x, y);
             break;
         case WOLF:
-            o = new Wolf(*this);
+            o = new Wolf(*this, x, y);
             break;
         case SHEEP:
-            o = new Sheep(*this);
+            o = new Sheep(*this, x, y);
             break;
         case FOX:
-            o = new Fox(*this);
+            o = new Fox(*this, x, y);
             break;
         case TURTLE:
-            o = new Turtle(*this);
+            o = new Turtle(*this, x, y);
             break;
         case ANTELOPE:
-            o = new Antelope(*this);
+            o = new Antelope(*this, x, y);
             break;
     }
     organisms[x*worldY+y] = o;
+}
+
+void World::move(int fromX, int fromY, int toX, int toY) {
+    if (organisms[toX*worldY+toY] == NULL){
+        organisms[toX*worldY+toY] = organisms[fromX*worldY+fromY];
+        organisms[fromX*worldY+fromY] = NULL;
+    }
+}
+
+int World::getWorldX() {
+    return worldX;
+}
+
+int World::getWorldY() {
+    return worldY;
 }

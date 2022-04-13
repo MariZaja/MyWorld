@@ -7,7 +7,3 @@
 Animal::Animal(World &w, int x, int y) : Organism(w, x, y) {
 
 }
-
-void Animal::action() {
-
-}

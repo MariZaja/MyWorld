@@ -8,8 +8,6 @@
 class World;
 
 class Organism {
-    virtual void action() =0;
-    virtual void colision() =0;
 protected:
     int initiative;
     int force;
@@ -21,6 +19,8 @@ public:
     int getInitiative() const;
     int getAge() const;
     Organism(World& w, int x, int y);
+    virtual void action() =0;
+    virtual void colision() =0;
     virtual void draw() =0;
 };
 

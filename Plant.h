@@ -5,7 +5,6 @@
 #define MYWORLD_PLANT_H
 #include "Organism.h"
 
-
 class Plant: public Organism {
     int probabilityOfSpreading;
 public:
