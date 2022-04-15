@@ -45,7 +45,6 @@ bool World::action() {
 
         system("cls");
 
-        std::cout << "World action" << std::endl;
         printArea();
     }
     else { return false; }
@@ -63,6 +62,10 @@ void World::setArea() {
             setNewOrganism(x, y, i%DIFFRENT_ORGANISMS);
         }
     }
+    organismsIniciative = organisms;
+    std::sort(organismsIniciative, organismsIniciative+10,  [](Organism const & a, Organism const & b) -> bool { return a.getAge() > b.getAge(); });
+    std::sort(organismsIniciative, organismsIniciative+10,  [](Organism const & a, Organism const & b) -> bool { return a.getInitiative() < b.getInitiative(); });
+    std::cout << organismsIniciative[0]->getInitiative() << std::endl;
 }
 
 void World::start() {
@@ -161,4 +164,12 @@ bool World::checkPosition(int x, int y) {
 
 int World::getAge() {
     return worldAge;
+}
+
+bool World::compAge(const Organism &lhs, const Organism &rhs) {
+    return lhs.getAge() > rhs.getAge();
+}
+
+bool World::compIniciative(const Organism &lhs, const Organism &rhs) {
+    return lhs.getInitiative() < rhs.getInitiative();
 }

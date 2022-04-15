@@ -8,6 +8,7 @@
 #include <vector>
 #include <stdlib.h>
 #include <time.h>
+#include <algorithm>
 #include "Organism.h"
 #include "Console.h"
 
@@ -19,6 +20,7 @@ class World {
     Console* console;
     Organism* h;
     Organism** organisms;
+    Organism** organismsIniciative;
     void setArea();
     void setNewOrganism(int x, int y, int number);
     void printArea();
@@ -33,6 +35,8 @@ public:
     int getWorldX();
     int getWorldY();
     int getAge();
+    bool compAge(const Organism& lhs, const Organism& rhs);
+    bool compIniciative(const Organism& lhs, const Organism& rhs);
 };
 
 
