@@ -20,3 +20,7 @@ void Fox::colision() {
 void Fox::draw() {
     std::cout << 'f';
 }
+
+void Fox::setDirection(int d) {
+
+}

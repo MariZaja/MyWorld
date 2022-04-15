@@ -20,3 +20,7 @@ void Antelope::colision() {
 void Antelope::draw() {
     std::cout << 'a';
 }
+
+void Antelope::setDirection(int d) {
+
+}

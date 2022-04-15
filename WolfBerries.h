@@ -10,6 +10,7 @@ class WolfBerries: public Plant {
     void action() override;
     void colision() override;
     void draw() override;
+    void setDirection(int d) override;
 public:
     WolfBerries(World& w, int x, int y);
 };

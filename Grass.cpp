@@ -19,3 +19,7 @@ void Grass::colision() {
 void Grass::draw() {
     std::cout << 'r';
 }
+
+void Grass::setDirection(int d) {
+
+}

@@ -22,6 +22,8 @@ public:
     virtual void action() =0;
     virtual void colision() =0;
     virtual void draw() =0;
+    virtual void setDirection(int d) =0;
+    virtual void setPosition(int x, int y);
 };
 
 

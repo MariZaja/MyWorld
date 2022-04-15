@@ -10,7 +10,6 @@
 #include <time.h>
 #include "Organism.h"
 #include "Console.h"
-//#include "Human.h"
 
 class Organism;
 
@@ -18,14 +17,13 @@ class World {
     int worldX, worldY;
     int worldAge;
     Console* console;
-    //Human* human;
+    Organism* h;
     Organism** organisms;
     void setArea();
     void setNewOrganism(int x, int y, int number);
     void printArea();
     bool action();
 public:
-    int slowo = 0;
     World(int x, int y);
     ~World();
     void start();

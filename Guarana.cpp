@@ -19,3 +19,7 @@ void Guarana::colision() {
 void Guarana::draw() {
     std::cout<< 'g';
 }
+
+void Guarana::setDirection(int d) {
+
+}

@@ -19,3 +19,7 @@ void Dandelion::colision() {
 void Dandelion::draw() {
     std::cout << 'd';
 }
+
+void Dandelion::setDirection(int d) {
+
+}

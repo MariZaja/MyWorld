@@ -20,3 +20,7 @@ void Wolf::colision() {
 void Wolf::draw() {
     std::cout << 'w';
 }
+
+void Wolf::setDirection(int d) {
+
+}

@@ -19,3 +19,7 @@ void WolfBerries::colision() {
 void WolfBerries::draw() {
     std::cout<< 'b';
 }
+
+void WolfBerries::setDirection(int d) {
+
+}

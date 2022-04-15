@@ -20,3 +20,8 @@ int Organism::getForce() const{
 int Organism::getAge() const{
     return age;
 }
+
+void Organism::setPosition(int x, int y) {
+    organismX = x;
+    organismY = y;
+}

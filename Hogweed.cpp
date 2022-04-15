@@ -19,3 +19,7 @@ void Hogweed::colision() {
 void Hogweed::draw() {
     std::cout<< 'h';
 }
+
+void Hogweed::setDirection(int d) {
+
+}

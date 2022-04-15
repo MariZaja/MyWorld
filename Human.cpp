@@ -1,5 +1,5 @@
 //
-// Created by Marysia on 13.04.2022.
+// Created by Marysia on 15.04.2022.
 //
 
 #include "Human.h"
@@ -7,6 +7,7 @@
 Human::Human(World &w, int x, int y) : Animal(w, x, y) {
     force = 5;
     initiative = 4;
+    direction = 0;
 }
 
 void Human::action() {
@@ -28,14 +29,14 @@ void Human::action() {
     }
 }
 
-void Human::draw(){
-    std::cout << "H";
+void Human::colision() {
+
+}
+
+void Human::draw() {
+    std::cout << 'H';
 }
 
 void Human::setDirection(int d) {
     direction = d;
-}
-
-void Human::colision() {
-
 }

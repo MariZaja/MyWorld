@@ -20,3 +20,7 @@ void Sheep::colision() {
 void Sheep::draw() {
     std::cout << 's';
 }
+
+void Sheep::setDirection(int d) {
+
+}

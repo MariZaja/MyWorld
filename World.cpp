@@ -3,6 +3,7 @@
 //
 
 #include "World.h"
+#include "Human.h"
 #include "Plant.h"
 #include "Grass.h"
 #include "Dandelion.h"
@@ -15,7 +16,7 @@
 #include "Turtle.h"
 #include "Antelope.h"
 
-#define START_NUMBER_OF_ORGANISMS 300
+#define START_NUMBER_OF_ORGANISMS 100
 #define DIFFRENT_ORGANISMS 10
 enum organismID {GRASS, DANDELION, GUARANA, WOLFBERRIES, HOGWEED, WOLF, SHEEP, FOX, TURTLE, ANTELOPE};
 
@@ -23,10 +24,10 @@ World::World(int x, int y)
     : worldX{ x }, worldY{ y }, worldAge{ 1 } {
     console = new Console;
     organisms = new Organism*[worldX*worldY];
+    h = new Human(*this, 0, 0);
     for(int i = 0; i < worldX*worldY; i++) {
         organisms[i] = NULL;
     }
-    //human = new Human(*this, 0, 0);
     setArea();
     std::cout << "World created" << std::endl;
     //standardowe organizmy
@@ -39,8 +40,8 @@ World::~World(){
 
 bool World::action() {
     if (console->readInstruction()) {
-        //human->setDirection(console->getInstruction());
-        //human->action();
+        h->setDirection(console->getInstruction());
+        h->action();
 
         system("cls");
 
@@ -53,7 +54,7 @@ bool World::action() {
 
 void World::setArea() {
     srand (time(NULL));
-    //organisms[0] = human;
+    organisms[0] = h;
     int x, y;
     for (int i = 0; i < START_NUMBER_OF_ORGANISMS; i++){
         x = rand() % worldX;
@@ -76,6 +77,7 @@ void World::commentary() {
         std::cout << "*";
     }
     std::cout << '\n' << "komentarz" << std::endl;
+    std::cout << '\n' << "kierunek: " << console->getInstruction() << std::endl;
     for (int i=0; i<24; i++){
         std::cout << "*";
     }
@@ -135,9 +137,12 @@ void World::setNewOrganism(int x, int y, int number) {
 }
 
 void World::move(int fromX, int fromY, int toX, int toY) {
-    if (organisms[toX*worldY+toY] == NULL){
-        organisms[toX*worldY+toY] = organisms[fromX*worldY+fromY];
-        organisms[fromX*worldY+fromY] = NULL;
+    int from = fromX*worldY+fromY;
+    int to = toX*worldY+toY;
+    if (organisms[to] == NULL){
+        organisms[to] = organisms[from];
+        organisms[from] = NULL;
+        organisms[to]->setPosition(toX, toY);
     }
 }
 
