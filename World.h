@@ -23,6 +23,7 @@ class World {
     void setNewOrganism(int x, int y, int number);
     void printArea();
     bool action();
+    bool checkPosition(int x, int y);
 public:
     World(int x, int y);
     ~World();
@@ -31,6 +32,7 @@ public:
     void move(int fromX, int fromY, int toX, int toY);
     int getWorldX();
     int getWorldY();
+    int getAge();
 };
 
 

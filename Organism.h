@@ -11,7 +11,7 @@ class Organism {
 protected:
     int initiative;
     int force;
-    int age;
+    int born;
     int organismX, organismY;
     World& world;
 public:

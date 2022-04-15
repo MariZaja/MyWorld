@@ -139,7 +139,7 @@ void World::setNewOrganism(int x, int y, int number) {
 void World::move(int fromX, int fromY, int toX, int toY) {
     int from = fromX*worldY+fromY;
     int to = toX*worldY+toY;
-    if (organisms[to] == NULL){
+    if (organisms[to] == NULL && checkPosition(toX, toY)){
         organisms[to] = organisms[from];
         organisms[from] = NULL;
         organisms[to]->setPosition(toX, toY);
@@ -152,4 +152,13 @@ int World::getWorldX() {
 
 int World::getWorldY() {
     return worldY;
+}
+
+bool World::checkPosition(int x, int y) {
+    if(x < 0 || y < 0 || x >= worldX || y >= worldY){return false;}
+    return true;
+}
+
+int World::getAge() {
+    return worldAge;
 }

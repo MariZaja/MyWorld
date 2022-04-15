@@ -6,7 +6,7 @@
 
 Organism::Organism(World &w, int x, int y)
     : organismX{ x }, organismY{ y }, world{ w }{
-    age = 1;
+    born = world.getAge();
 }
 
 int Organism::getInitiative() const {
@@ -18,7 +18,7 @@ int Organism::getForce() const{
 }
 
 int Organism::getAge() const{
-    return age;
+    return born;
 }
 
 void Organism::setPosition(int x, int y) {

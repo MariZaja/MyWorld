@@ -15,16 +15,16 @@ void Human::action() {
     int y=world.getWorldY();
     switch (direction){
         case UP:
-            world.move(organismX, organismY, organismX, (organismY-1)%y);
+            world.move(organismX, organismY, organismX, organismY-1);
             break;
         case RIGHT:
-            world.move(organismX, organismY, (organismX+1)%x, organismY);
+            world.move(organismX, organismY, organismX+1, organismY);
             break;
         case DOWN:
-            world.move(organismX, organismY, organismX, (organismY+1)%y);
+            world.move(organismX, organismY, organismX, organismY+1);
             break;
         case LEFT:
-            world.move(organismX, organismY, (organismX-1)%x, organismY);
+            world.move(organismX, organismY, organismX-1, organismY);
             break;
     }
 }
