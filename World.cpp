@@ -16,7 +16,7 @@
 #include "Turtle.h"
 #include "Antelope.h"
 
-#define START_NUMBER_OF_ORGANISMS 100
+#define START_NUMBER_OF_ORGANISMS 15
 #define DIFFRENT_ORGANISMS 10
 enum organismID {GRASS, DANDELION, GUARANA, WOLFBERRIES, HOGWEED, WOLF, SHEEP, FOX, TURTLE, ANTELOPE};
 
@@ -24,6 +24,7 @@ World::World(int x, int y)
     : worldX{ x }, worldY{ y }, worldAge{ 1 } {
     console = new Console;
     organisms = new Organism*[worldX*worldY];
+    organismsIniciative.clear();
     h = new Human(*this, 0, 0);
     for(int i = 0; i < worldX*worldY; i++) {
         organisms[i] = NULL;
@@ -62,10 +63,8 @@ void World::setArea() {
             setNewOrganism(x, y, i%DIFFRENT_ORGANISMS);
         }
     }
-    organismsIniciative = organisms;
-    std::sort(organismsIniciative, organismsIniciative+10,  [](Organism const & a, Organism const & b) -> bool { return a.getAge() > b.getAge(); });
-    std::sort(organismsIniciative, organismsIniciative+10,  [](Organism const & a, Organism const & b) -> bool { return a.getInitiative() < b.getInitiative(); });
-    std::cout << organismsIniciative[0]->getInitiative() << std::endl;
+    std::sort(organismsIniciative.begin(), organismsIniciative.end(), this->compare);
+    organismsIniciative[0]->draw();
 }
 
 void World::start() {
@@ -137,6 +136,7 @@ void World::setNewOrganism(int x, int y, int number) {
             break;
     }
     organisms[x*worldY+y] = o;
+    organismsIniciative.push_back(o);
 }
 
 void World::move(int fromX, int fromY, int toX, int toY) {
@@ -166,10 +166,13 @@ int World::getAge() {
     return worldAge;
 }
 
-bool World::compAge(const Organism &lhs, const Organism &rhs) {
-    return lhs.getAge() > rhs.getAge();
-}
-
-bool World::compIniciative(const Organism &lhs, const Organism &rhs) {
-    return lhs.getInitiative() < rhs.getInitiative();
+bool World::compare(Organism *o1, Organism *o2) {
+    std:: cout << "i";
+    if (o1->getInitiative() < o2->getInitiative()){ return false; }
+    else if (o1->getInitiative() > o2->getInitiative()){ return true; }
+    else if (o1->getInitiative() == o2->getInitiative()){
+        if (o1->getAge() < o2->getAge()){ return true; }
+        else if (o1->getAge() > o2->getAge()){ return false; }
+    }
+    return true;
 }
