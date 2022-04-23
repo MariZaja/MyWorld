@@ -21,7 +21,6 @@ bool Console::readInstruction() {
     }
     else if (ch == ESC)
     {
-        std::cout << "Click 'q' to quit game\n";
         return false;
     }
 }
