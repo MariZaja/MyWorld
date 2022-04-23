@@ -23,6 +23,7 @@ enum organismID {GRASS, DANDELION, GUARANA, WOLFBERRIES, HOGWEED, WOLF, SHEEP, F
 World::World(int x, int y)
     : worldX{ x }, worldY{ y }, worldAge{ 1 } {
     srand (time(NULL));
+    end = false;
     console = new Console;
     organisms = new Organism*[worldX*worldY];
     h = new Human(*this, 0, 0);
@@ -36,18 +37,26 @@ World::World(int x, int y)
 }
 
 World::~World(){
+    delete h;
+    delete console;
     delete[] organisms;
     std::cout << "World destroyed" << std::endl;
 }
 
 bool World::action() {
+    if (end){return false;}
+    if (worldAge == 1){
+        printArea();
+        return true;
+    }
     if (console->readInstruction()) {
         h->setDirection(console->getInstruction());
 
         system("cls");
 
         for (int i=MAX_INITIATIVE-1; i>=0; i--){
-            for (int j=0; j<organismsIniciative[i].size(); j++){
+            int size = organismsIniciative[i].size();
+            for (int j=0; j<size; j++){
                 organismsIniciative[i][j]->action();
             }
         }

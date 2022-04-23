@@ -38,6 +38,7 @@ public:
     int getAge();
     bool checkPosition(int x, int y);
     void setNewOrganism(int x, int y, int number);
+    bool end;
 };
 
 
