@@ -24,8 +24,8 @@ World::World(int x, int y)
     : worldX{ x }, worldY{ y }, worldAge{ 1 } {
     console = new Console;
     organisms = new Organism*[worldX*worldY];
-    //init
     h = new Human(*this, 0, 0);
+    organismsIniciative[h->getInitiative()].push_back(h);
     for(int i = 0; i < worldX*worldY; i++) {
         organisms[i] = NULL;
     }
@@ -46,6 +46,13 @@ bool World::action() {
 
         system("cls");
 
+        for (int i=MAX_INITIATIVE-1; i>=0; i--){
+            for (int j=0; j<organismsIniciative[i].size(); j++){
+                organismsIniciative[i][j]->draw();
+            }
+        }
+        std::cout<<std::endl;
+
         printArea();
     }
     else { return false; }
@@ -63,7 +70,6 @@ void World::setArea() {
             setNewOrganism(x, y, i%DIFFRENT_ORGANISMS);
         }
     }
-    organismsIniciative[7][0]->draw();
 }
 
 void World::start() {
