@@ -11,6 +11,7 @@ protected:
 
 public:
     Animal(World& w, int x, int y);
+    ~Animal();
 };
 
 

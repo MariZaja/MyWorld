@@ -14,3 +14,7 @@ void Animal::action() {
         world.move(this->organismX, this->organismY, toX, toY);
     }
 }
+
+Animal::~Animal() {
+
+}
