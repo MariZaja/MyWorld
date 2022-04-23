@@ -33,6 +33,7 @@ public:
     void start();
     void commentary();
     void move(int fromX, int fromY, int toX, int toY);
+    void deleteOrganism(int x, int y);
     int getWorldX();
     int getWorldY();
     int getAge();

@@ -177,3 +177,14 @@ bool World::checkPosition(int x, int y) {
 int World::getAge() {
     return worldAge;
 }
+
+void World::deleteOrganism(int x, int y) {
+    int initiative = organisms[x*worldY+y]->getInitiative();
+    for (std::vector <Organism*>::iterator i = this->organismsIniciative[initiative].begin(); i < this->organismsIniciative[initiative].end();i++){
+        if (*i == organisms[x*worldY+y]){
+            if (*i == h){end = true;}
+            organismsIniciative[initiative].erase(i);
+        }
+    }
+    organisms[x*worldY+y] = NULL;
+}
