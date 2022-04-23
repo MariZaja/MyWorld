@@ -6,6 +6,7 @@
 #define MYWORLD_WORLD_H
 #include <iostream>
 #include <vector>
+#include <cmath>
 #include <stdlib.h>
 #include <time.h>
 #include <algorithm>
@@ -23,11 +24,10 @@ class World {
     Organism* h;
     std::vector< Organism* > organismsIniciative[MAX_INITIATIVE];
     void setArea();
-    void setNewOrganism(int x, int y, int number);
     void printArea();
     bool action();
-
 public:
+    Organism** organisms;
     World(int x, int y);
     ~World();
     void start();
@@ -36,10 +36,8 @@ public:
     int getWorldX();
     int getWorldY();
     int getAge();
-
-    Organism** organisms;
-
     bool checkPosition(int x, int y);
+    void setNewOrganism(int x, int y, int number);
 };
 
 
