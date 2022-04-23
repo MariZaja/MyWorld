@@ -22,6 +22,7 @@ public:
     int getAge() const;
     int getID() const;
     Organism(World& w, int x, int y);
+    ~Organism();
     virtual void action() =0;
     virtual void colision() =0;
     virtual void draw() =0;

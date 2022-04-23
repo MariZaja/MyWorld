@@ -34,3 +34,7 @@ void Organism::setDestination(int fields) {
 int Organism::getID() const {
     return ID;
 }
+
+Organism::~Organism() {
+
+}
