@@ -10,7 +10,10 @@ Dandelion::Dandelion(World &w, int x, int y) : Plant(w, x, y) {
 }
 
 void Dandelion::action() {
-
+    int trySpreading=3;
+    for (int i=0; i<trySpreading; i++){
+        Plant::action();
+    }
 }
 
 void Dandelion::colision() {
