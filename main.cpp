@@ -9,5 +9,10 @@ int main() {
     std::cin >> y;
     World myWorld(x, y);
     myWorld.start();
+    std::cout << "The end";
+    char com = ' ';
+    while(com != 'q'){
+        std::cin >> com;
+    }
     return 0;
 }
