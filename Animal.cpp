@@ -15,5 +15,4 @@ void Animal::action() {
     if (world.checkPosition(toX, toY)){
         world.move(this->organismX, this->organismY, toX, toY);
     }
-    std::cout<<"move ";
 }

@@ -9,10 +9,6 @@ Wolf::Wolf(World &w, int x, int y) : Animal(w, x, y) {
     initiative = 5;
 }
 
-void Wolf::action() {
-
-}
-
 void Wolf::colision() {
 
 }
