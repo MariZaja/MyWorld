@@ -9,7 +9,8 @@ int main() {
     std::cin >> y;
     World myWorld(x, y);
     myWorld.start();
-    std::cout << "The end";
+    std::cout << "The end\n";
+    std::cout << "Click 'q' to quit game\n";
     char com = ' ';
     while(com != 'q'){
         std::cin >> com;

@@ -21,7 +21,7 @@ bool Console::readInstruction() {
     }
     else if (ch == ESC)
     {
-        std::cout << "Escape pressed, going out!\n";
+        std::cout << "Click 'q' to quit game\n";
         return false;
     }
 }
