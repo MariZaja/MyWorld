@@ -12,6 +12,8 @@
 #include "Organism.h"
 #include "Console.h"
 
+#define MAX_INITIATIVE 8
+
 class Organism;
 
 class World {
@@ -20,7 +22,7 @@ class World {
     Console* console;
     Organism* h;
     Organism** organisms;
-    std::vector< Organism* > organismsIniciative;
+    std::vector< Organism* > organismsIniciative[MAX_INITIATIVE];
     void setArea();
     void setNewOrganism(int x, int y, int number);
     void printArea();
@@ -35,7 +37,6 @@ public:
     int getWorldX();
     int getWorldY();
     int getAge();
-    static bool compare(Organism* o1, Organism* o2);
 };
 
 

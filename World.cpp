@@ -16,7 +16,7 @@
 #include "Turtle.h"
 #include "Antelope.h"
 
-#define START_NUMBER_OF_ORGANISMS 15
+#define START_NUMBER_OF_ORGANISMS 100
 #define DIFFRENT_ORGANISMS 10
 enum organismID {GRASS, DANDELION, GUARANA, WOLFBERRIES, HOGWEED, WOLF, SHEEP, FOX, TURTLE, ANTELOPE};
 
@@ -24,7 +24,7 @@ World::World(int x, int y)
     : worldX{ x }, worldY{ y }, worldAge{ 1 } {
     console = new Console;
     organisms = new Organism*[worldX*worldY];
-    organismsIniciative.clear();
+    //init
     h = new Human(*this, 0, 0);
     for(int i = 0; i < worldX*worldY; i++) {
         organisms[i] = NULL;
@@ -63,8 +63,7 @@ void World::setArea() {
             setNewOrganism(x, y, i%DIFFRENT_ORGANISMS);
         }
     }
-    std::sort(organismsIniciative.begin(), organismsIniciative.end(), this->compare);
-    organismsIniciative[0]->draw();
+    organismsIniciative[7][0]->draw();
 }
 
 void World::start() {
@@ -136,7 +135,7 @@ void World::setNewOrganism(int x, int y, int number) {
             break;
     }
     organisms[x*worldY+y] = o;
-    organismsIniciative.push_back(o);
+    organismsIniciative[o->getInitiative()].push_back(o);
 }
 
 void World::move(int fromX, int fromY, int toX, int toY) {
@@ -164,15 +163,4 @@ bool World::checkPosition(int x, int y) {
 
 int World::getAge() {
     return worldAge;
-}
-
-bool World::compare(Organism *o1, Organism *o2) {
-    std:: cout << "i";
-    if (o1->getInitiative() < o2->getInitiative()){ return false; }
-    else if (o1->getInitiative() > o2->getInitiative()){ return true; }
-    else if (o1->getInitiative() == o2->getInitiative()){
-        if (o1->getAge() < o2->getAge()){ return true; }
-        else if (o1->getAge() > o2->getAge()){ return false; }
-    }
-    return true;
 }
