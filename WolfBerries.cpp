@@ -6,6 +6,7 @@
 
 WolfBerries::WolfBerries(World &w, int x, int y) : Plant(w, x, y) {
     force = 99;
+    ID = 3;
 }
 
 void WolfBerries::action() {

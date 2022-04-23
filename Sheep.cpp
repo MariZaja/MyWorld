@@ -7,6 +7,7 @@
 Sheep::Sheep(World &w, int x, int y) : Animal(w, x, y) {
     force = 4;
     initiative = 4;
+    ID = 6;
 }
 
 void Sheep::colision() {

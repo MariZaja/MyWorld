@@ -7,6 +7,7 @@
 Fox::Fox(World &w, int x, int y) : Animal(w, x, y) {
     force = 3;
     initiative = 7;
+    ID = 7;
 }
 
 void Fox::action() {

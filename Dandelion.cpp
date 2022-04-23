@@ -6,6 +6,7 @@
 
 Dandelion::Dandelion(World &w, int x, int y) : Plant(w, x, y) {
     force = 0;
+    ID = 1;
 }
 
 void Dandelion::action() {

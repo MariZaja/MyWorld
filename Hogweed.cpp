@@ -6,6 +6,7 @@
 
 Hogweed::Hogweed(World &w, int x, int y) : Plant(w, x, y) {
     force = 10;
+    ID = 4;
 }
 
 void Hogweed::action() {

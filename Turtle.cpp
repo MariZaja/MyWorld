@@ -7,6 +7,7 @@
 Turtle::Turtle(World &w, int x, int y) : Animal(w, x, y) {
     force = 2;
     initiative = 1;
+    ID = 8;
 }
 
 void Turtle::action() {

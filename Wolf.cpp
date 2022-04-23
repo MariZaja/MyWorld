@@ -7,6 +7,7 @@
 Wolf::Wolf(World &w, int x, int y) : Animal(w, x, y) {
     force = 9;
     initiative = 5;
+    ID = 5;
 }
 
 void Wolf::colision() {

@@ -7,6 +7,7 @@
 Antelope::Antelope(World &w, int x, int y) : Animal(w, x, y) {
     force = 4;
     initiative = 4;
+    ID = 9;
 }
 
 void Antelope::action() {
