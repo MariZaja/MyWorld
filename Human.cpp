@@ -8,6 +8,7 @@ Human::Human(World &w, int x, int y) : Animal(w, x, y) {
     force = 5;
     initiative = 4;
     direction = 0;
+    ID = 10;
 }
 
 void Human::action() {
