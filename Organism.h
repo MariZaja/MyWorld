@@ -10,6 +10,7 @@ class World;
 
 class Organism {
 protected:
+    int ID;
     int initiative;
     int force;
     int born;
@@ -19,6 +20,7 @@ public:
     int getForce() const;
     int getInitiative() const;
     int getAge() const;
+    int getID() const;
     Organism(World& w, int x, int y);
     virtual void action() =0;
     virtual void colision() =0;

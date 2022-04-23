@@ -6,6 +6,7 @@
 
 Grass::Grass(World& w, int x, int y): Plant(w, x, y) {
     force = 0;
+    ID = 0;
 }
 
 void Grass::action() {
