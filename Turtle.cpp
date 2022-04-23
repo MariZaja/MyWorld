@@ -10,7 +10,11 @@ Turtle::Turtle(World &w, int x, int y) : Animal(w, x, y) {
 }
 
 void Turtle::action() {
-
+    srand (time(NULL));
+    int moving = rand() % 4;
+    if (moving == 0){
+        Animal::action();
+    }
 }
 
 void Turtle::colision() {
