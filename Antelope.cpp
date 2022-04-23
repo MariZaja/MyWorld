@@ -10,7 +10,10 @@ Antelope::Antelope(World &w, int x, int y) : Animal(w, x, y) {
 }
 
 void Antelope::action() {
-
+    setDestination(2);
+    if (world.checkPosition(toX, toY)){
+        world.move(this->organismX, this->organismY, toX, toY);
+    }
 }
 
 void Antelope::colision() {

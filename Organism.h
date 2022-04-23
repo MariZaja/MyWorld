@@ -13,7 +13,7 @@ protected:
     int initiative;
     int force;
     int born;
-    int organismX, organismY;
+    int organismX, organismY, toX, toY;
     World& world;
 public:
     int getForce() const;
@@ -25,6 +25,7 @@ public:
     virtual void draw() =0;
     virtual void setDirection(int d) =0;
     virtual void setPosition(int x, int y);
+    virtual void setDestination(int fields);
 };
 
 

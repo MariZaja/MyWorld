@@ -10,9 +10,7 @@ Fox::Fox(World &w, int x, int y) : Animal(w, x, y) {
 }
 
 void Fox::action() {
-    srand (time(NULL));
-    int toX = this->organismX + (rand()%3 - 1);
-    int toY = this->organismY + (rand()%3 - 1);
+    setDestination(1);
     int to = (toX)*world.getWorldY()+(toY);
     if (world.checkPosition(toX, toY)){
         if((world.organisms[to]!=NULL && world.organisms[to]->getForce() <= this->getForce()) || world.organisms[to]==NULL){

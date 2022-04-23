@@ -25,3 +25,9 @@ void Organism::setPosition(int x, int y) {
     organismX = x;
     organismY = y;
 }
+
+void Organism::setDestination(int fields) {
+    srand (time(NULL));
+    this->toX = this->organismX + (rand()%3 - 1)*fields;
+    this->toY = this->organismY + (rand()%3 - 1)*fields;
+}
