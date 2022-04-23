@@ -11,8 +11,6 @@ Human::Human(World &w, int x, int y) : Animal(w, x, y) {
 }
 
 void Human::action() {
-    int x=world.getWorldX();
-    int y=world.getWorldY();
     switch (direction){
         case UP:
             world.move(organismX, organismY, organismX, organismY-1);

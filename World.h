@@ -21,13 +21,12 @@ class World {
     int worldAge;
     Console* console;
     Organism* h;
-    Organism** organisms;
     std::vector< Organism* > organismsIniciative[MAX_INITIATIVE];
     void setArea();
     void setNewOrganism(int x, int y, int number);
     void printArea();
     bool action();
-    bool checkPosition(int x, int y);
+
 public:
     World(int x, int y);
     ~World();
@@ -37,6 +36,10 @@ public:
     int getWorldX();
     int getWorldY();
     int getAge();
+
+    Organism** organisms;
+
+    bool checkPosition(int x, int y);
 };
 
 

@@ -4,6 +4,7 @@
 #ifndef MYWORLD_ORGANISM_H
 #define MYWORLD_ORGANISM_H
 #include "World.h"
+#include <time.h>
 
 class World;
 
@@ -24,7 +25,6 @@ public:
     virtual void draw() =0;
     virtual void setDirection(int d) =0;
     virtual void setPosition(int x, int y);
-
 };
 
 

@@ -42,16 +42,14 @@ World::~World(){
 bool World::action() {
     if (console->readInstruction()) {
         h->setDirection(console->getInstruction());
-        h->action();
 
         system("cls");
 
         for (int i=MAX_INITIATIVE-1; i>=0; i--){
             for (int j=0; j<organismsIniciative[i].size(); j++){
-                organismsIniciative[i][j]->draw();
+                organismsIniciative[i][j]->action();
             }
         }
-        std::cout<<std::endl;
 
         printArea();
     }

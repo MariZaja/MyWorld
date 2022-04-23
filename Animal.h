@@ -6,6 +6,7 @@
 #include "Organism.h"
 
 class Animal: public Organism {
+    void action() override;
 public:
     Animal(World& w, int x, int y);
 };
