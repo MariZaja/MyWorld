@@ -9,10 +9,6 @@ Sheep::Sheep(World &w, int x, int y) : Animal(w, x, y) {
     initiative = 4;
 }
 
-void Sheep::action() {
-
-}
-
 void Sheep::colision() {
 
 }
