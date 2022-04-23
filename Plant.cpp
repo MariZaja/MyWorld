@@ -6,4 +6,13 @@
 
 Plant::Plant(World &w, int x, int y) : Organism(w, x, y) {
     initiative = 0;
+    setProbabilityOfSpreading();
+}
+
+void Plant::setProbabilityOfSpreading() {
+    probabilityOfSpreading = rand() % RANDOM;
+}
+
+void Plant::action() {
+
 }

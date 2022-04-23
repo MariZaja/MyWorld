@@ -5,10 +5,15 @@
 #define MYWORLD_PLANT_H
 #include "Organism.h"
 
+#define RANDOM 7
+
 class Plant: public Organism {
+protected:
     int probabilityOfSpreading;
+    void action() override;
 public:
     Plant(World &w, int x, int y);
+    void setProbabilityOfSpreading();
 };
 
 

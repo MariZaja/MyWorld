@@ -22,6 +22,7 @@ enum organismID {GRASS, DANDELION, GUARANA, WOLFBERRIES, HOGWEED, WOLF, SHEEP, F
 
 World::World(int x, int y)
     : worldX{ x }, worldY{ y }, worldAge{ 1 } {
+    srand (time(NULL));
     console = new Console;
     organisms = new Organism*[worldX*worldY];
     h = new Human(*this, 0, 0);
@@ -58,7 +59,6 @@ bool World::action() {
 }
 
 void World::setArea() {
-    srand (time(NULL));
     organisms[0] = h;
     int x, y;
     for (int i = 0; i < START_NUMBER_OF_ORGANISMS; i++){
