@@ -9,21 +9,21 @@ Organism::Organism(World &w, int x, int y)
     born = world.getAge();
 }
 
-void Organism::colision(Organism *o) {
+bool Organism::colision(Organism *o) {
     if (o->getForce() > this->getForce()){
         world.deleteOrganism(organismX, organismY);
-        world.move(o->getOrganismX(), o->getOrganismX(), organismX, organismY);
     }
     else if(o->getForce() < this->getForce()){
         world.deleteOrganism(o->getOrganismX(), o->getOrganismY());
+        return true;
     }
     else if (o->getForce() == this->getForce()){
         if(o->getID() == ID){
             //o->multiply(organismX, organismY);
+            return true;
         }
         else{
             world.deleteOrganism(organismX, organismY);
-            world.move(o->getOrganismX(), o->getOrganismX(), organismX, organismY);
         }
     }
 }

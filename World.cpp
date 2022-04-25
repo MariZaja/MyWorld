@@ -46,6 +46,7 @@ World::~World(){
 bool World::action() {
     if (end){return false;}
     if (worldAge == 1){
+        system("cls");
         printArea();
         return true;
     }
@@ -160,7 +161,9 @@ void World::move(int fromX, int fromY, int toX, int toY) {
         organisms[to]->setPosition(toX, toY);
     }
     else if(organisms[to] != NULL){
-        organisms[to]->colision(organisms[from]);
+        if (!organisms[to]->colision(organisms[from])){
+            move(fromX, fromY, toX, toY);
+        }
     }
 }
 

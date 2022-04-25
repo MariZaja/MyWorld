@@ -26,7 +26,7 @@ public:
     Organism(World& w, int x, int y);
     ~Organism();
     virtual void action() =0;
-    virtual void colision(Organism* o);
+    virtual bool colision(Organism* o);
     virtual void draw() =0;
     virtual void setDirection(int d) =0;
     virtual void setPosition(int x, int y);
