@@ -9,6 +9,25 @@ Organism::Organism(World &w, int x, int y)
     born = world.getAge();
 }
 
+void Organism::colision(Organism *o) {
+    if (o->getForce() > this->getForce()){
+        world.deleteOrganism(organismX, organismY);
+        world.move(o->getOrganismX(), o->getOrganismX(), organismX, organismY);
+    }
+    else if(o->getForce() < this->getForce()){
+        world.deleteOrganism(o->getOrganismX(), o->getOrganismY());
+    }
+    else if (o->getForce() == this->getForce()){
+        if(o->getID() == ID){
+            //o->multiply(organismX, organismY);
+        }
+        else{
+            world.deleteOrganism(organismX, organismY);
+            world.move(o->getOrganismX(), o->getOrganismX(), organismX, organismY);
+        }
+    }
+}
+
 int Organism::getInitiative() const {
     return initiative;
 }
@@ -37,4 +56,12 @@ int Organism::getID() const {
 
 Organism::~Organism() {
 
+}
+
+int Organism::getOrganismY() const {
+    return organismY;
+}
+
+int Organism::getOrganismX() const{
+    return organismX;
 }
