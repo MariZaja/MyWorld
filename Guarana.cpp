@@ -9,10 +9,6 @@ Guarana::Guarana(World &w, int x, int y) : Plant(w, x, y) {
     ID = 2;
 }
 
-void Guarana::colision() {
-
-}
-
 void Guarana::draw() {
     std::cout<< 'g';
 }

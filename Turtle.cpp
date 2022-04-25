@@ -17,10 +17,6 @@ void Turtle::action() {
     }
 }
 
-void Turtle::colision() {
-
-}
-
 void Turtle::draw() {
     std::cout << 'u';
 }

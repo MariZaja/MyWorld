@@ -30,10 +30,6 @@ void Hogweed::action() {
 
 }
 
-void Hogweed::colision() {
-
-}
-
 void Hogweed::draw() {
     std::cout<< 'h';
 }

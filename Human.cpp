@@ -28,10 +28,6 @@ void Human::action() {
     }
 }
 
-void Human::colision() {
-
-}
-
 void Human::draw() {
     std::cout << 'H';
 }

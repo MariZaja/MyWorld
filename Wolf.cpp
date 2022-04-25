@@ -10,10 +10,6 @@ Wolf::Wolf(World &w, int x, int y) : Animal(w, x, y) {
     ID = 5;
 }
 
-void Wolf::colision() {
-
-}
-
 void Wolf::draw() {
     std::cout << 'w';
 }

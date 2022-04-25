@@ -7,7 +7,6 @@
 #include "Animal.h"
 
 class Wolf: public Animal {
-    void colision() override;
     void draw() override;
     void setDirection(int d) override;
 public:

@@ -20,10 +20,6 @@ void Fox::action() {
     }
 }
 
-void Fox::colision() {
-
-}
-
 void Fox::draw() {
     std::cout << 'f';
 }

@@ -9,7 +9,6 @@
 class Human: public Animal {
     int direction;
     void action() override;
-    void colision() override;
     void draw() override;
 public:
     Human(World &w, int x, int y);

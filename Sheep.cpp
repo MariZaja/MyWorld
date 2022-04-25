@@ -10,10 +10,6 @@ Sheep::Sheep(World &w, int x, int y) : Animal(w, x, y) {
     ID = 6;
 }
 
-void Sheep::colision() {
-
-}
-
 void Sheep::draw() {
     std::cout << 's';
 }

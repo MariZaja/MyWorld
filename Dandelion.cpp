@@ -16,10 +16,6 @@ void Dandelion::action() {
     }
 }
 
-void Dandelion::colision() {
-
-}
-
 void Dandelion::draw() {
     std::cout << 'd';
 }

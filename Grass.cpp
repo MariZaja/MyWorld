@@ -9,10 +9,6 @@ Grass::Grass(World& w, int x, int y): Plant(w, x, y) {
     ID = 0;
 }
 
-void Grass::colision() {
-
-}
-
 void Grass::draw() {
     std::cout << 't';
 }

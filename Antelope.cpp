@@ -17,10 +17,6 @@ void Antelope::action() {
     }
 }
 
-void Antelope::colision() {
-
-}
-
 void Antelope::draw() {
     std::cout << 'a';
 }
