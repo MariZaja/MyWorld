@@ -15,7 +15,7 @@ bool Guarana::collision(Organism *o) {
 }
 
 void Guarana::draw() {
-    std::cout<< 'g';
+    std::cout<< "@";
 }
 
 void Guarana::setDirection(int d) {

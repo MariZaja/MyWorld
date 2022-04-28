@@ -19,7 +19,7 @@ bool WolfBerries::collision(Organism *o) {
 }
 
 void WolfBerries::draw() {
-    std::cout<< 'b';
+    std::cout<< '%';
 }
 
 void WolfBerries::setDirection(int d) {

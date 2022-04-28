@@ -17,7 +17,7 @@ void Dandelion::action() {
 }
 
 void Dandelion::draw() {
-    std::cout << 'd';
+    std::cout << '*';
 }
 
 void Dandelion::setDirection(int d) {

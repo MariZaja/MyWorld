@@ -37,7 +37,7 @@ bool Hogweed::collision(Organism *o) {
 
 
 void Hogweed::draw() {
-    std::cout<< 'h';
+    std::cout<< '#';
 }
 
 void Hogweed::setDirection(int d) {

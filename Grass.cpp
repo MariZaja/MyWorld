@@ -10,7 +10,7 @@ Grass::Grass(World& w, int x, int y): Plant(w, x, y) {
 }
 
 void Grass::draw() {
-    std::cout << 't';
+    std::cout << '~';
 }
 
 void Grass::setDirection(int d) {
