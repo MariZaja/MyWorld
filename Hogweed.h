@@ -8,6 +8,7 @@
 
 class Hogweed: public Plant {
     void action() override;
+    bool collision(Organism* o) override;
     void draw() override;
     void setDirection(int d) override;
 public:

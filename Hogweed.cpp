@@ -25,8 +25,16 @@ void Hogweed::action() {
         }b--;
         a++;
     }
-
 }
+
+bool Hogweed::collision(Organism *o) {
+    if (o->getID()>IF_ANIMAL){
+        world.deleteOrganism(o->getOrganismX(), o->getOrganismY());
+        return true;
+    }
+    return Organism::collision(o);
+}
+
 
 void Hogweed::draw() {
     std::cout<< 'h';
