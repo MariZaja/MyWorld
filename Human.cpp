@@ -35,3 +35,7 @@ void Human::draw() {
 void Human::setDirection(int d) {
     direction = d;
 }
+
+void Human::setPower(int p) {
+    force = 5 + p;
+}

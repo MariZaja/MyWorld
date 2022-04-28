@@ -52,6 +52,7 @@ bool World::action() {
     }
     if (console->readInstruction()) {
         h->setDirection(console->getInstruction());
+        h->setPower(console->getPower());
 
         system("cls");
 
@@ -92,6 +93,7 @@ void World::commentary() {
         std::cout << "*";
     }
     std::cout << '\n' << "komentarz" << std::endl;
+    std::cout << '\n' << "sila: " << h->getForce() << std::endl;
     std::cout << '\n' << "kierunek: " << console->getInstruction() << std::endl;
     for (int i=0; i<24; i++){
         std::cout << "*";
@@ -160,7 +162,7 @@ void World::move(int fromX, int fromY, int toX, int toY) {
         organisms[from] = NULL;
         organisms[to]->setPosition(toX, toY);
     }
-    else if(organisms[to] != NULL){
+    else if(organisms[to] != NULL && checkPosition(toX, toY)){
         if (!organisms[to]->collision(organisms[from])){
             move(fromX, fromY, toX, toY);
         }

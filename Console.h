@@ -16,7 +16,10 @@ enum direction{UP, RIGHT, DOWN, LEFT};
 
 class Console {
     int instruction;
+    int power;
 public:
+    Console();
+    int getPower();
     int getInstruction();
     bool readInstruction();
 };

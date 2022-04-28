@@ -24,6 +24,7 @@ public:
     int getOrganismX() const;
     int getOrganismY() const;
     void forceBoost(int f);
+    virtual void setPower(int p);
     Organism(World& w, int x, int y);
     ~Organism();
     void multiply(int x, int y);

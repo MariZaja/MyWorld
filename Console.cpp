@@ -1,8 +1,16 @@
 #include "Console.h"
 
+Console::Console() {
+    instruction = 0;
+    power = 0;
+}
+
 bool Console::readInstruction() {
     int ch = _getch();
-    if (ch == 224) {
+    if (ch == 104){
+        power = 5;
+    }
+    else if (ch == 224) {
         ch = _getch();
         switch (ch) {
             case KB_UP:
@@ -19,12 +27,16 @@ bool Console::readInstruction() {
                 return true;
         }
     }
-    else if (ch == ESC)
-    {
+    else if (ch == ESC){
         return false;
     }
 }
 
 int Console::getInstruction() {
     return instruction;
+}
+
+int Console::getPower() {
+    if (power != 0){ power -= 1; return power+1; }
+    else{ return 0; }
 }
