@@ -26,6 +26,7 @@ public:
     void forceBoost(int f);
     Organism(World& w, int x, int y);
     ~Organism();
+    void multiply(int x, int y);
     virtual void action() =0;
     virtual bool collision(Organism* o);
     virtual void draw() =0;

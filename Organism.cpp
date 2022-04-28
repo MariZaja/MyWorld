@@ -19,7 +19,7 @@ bool Organism::collision(Organism *o) {
     }
     else if (o->getForce() == this->getForce()){
         if(o->getID() == ID){
-            //o->multiply(organismX, organismY);
+            o->multiply(organismX, organismY);
             return true;
         }
         else{
@@ -68,4 +68,13 @@ int Organism::getOrganismX() const{
 
 void Organism::forceBoost(int f) {
     force += f;
+}
+
+void Organism::multiply(int x, int y) {
+    bool stop=false;
+    while(!stop){
+        setDestination(1);
+        if (toX != x && toY != y && world.checkPosition(toX, toY)){ stop = true; }
+    }
+    if (world.organisms[toX*world.getWorldY()+toY] == NULL){ world.setNewOrganism(toX, toY, ID); }
 }
