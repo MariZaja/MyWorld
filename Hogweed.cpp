@@ -21,10 +21,8 @@ void Hogweed::action() {
                 if (world.organisms[target] != NULL && world.organisms[target]->getID()>IF_ANIMAL){
                     world.deleteOrganism(organismX+a, organismY+b);
                 }
-            }
-            b++;
-        }
-        b = -1;
+            }b++;
+        }b--;
         a++;
     }
 

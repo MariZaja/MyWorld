@@ -17,6 +17,26 @@ void Antelope::action() {
     }
 }
 
+bool Antelope::collision(Organism *o) {
+    int run = rand() % 2;
+    int a = -1, b = -1;
+    if (run){
+        while(a<2){
+            while(b<2){
+                int target = (organismX+a)*world.getWorldY()+(organismY+b);
+                if (world.checkPosition(organismX+a, organismY+b)){
+                    if (world.organisms[target] == NULL){
+                        world.move(organismX, organismY,organismX+a, organismY+b);
+                    }
+                }b++;
+            }b--;
+            a++;
+        }
+        return true;
+    }
+    return Organism::collision(o);
+}
+
 void Antelope::draw() {
     std::cout << 'a';
 }

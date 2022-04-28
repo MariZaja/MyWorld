@@ -16,7 +16,7 @@
 #include "Turtle.h"
 #include "Antelope.h"
 
-#define START_NUMBER_OF_ORGANISMS 100
+#define START_NUMBER_OF_ORGANISMS 10
 #define DIFFRENT_ORGANISMS 10
 enum organismID {GRASS, DANDELION, GUARANA, WOLFBERRIES, HOGWEED, WOLF, SHEEP, FOX, TURTLE, ANTELOPE};
 
@@ -130,7 +130,7 @@ void World::setNewOrganism(int x, int y, int number) {
             o = new WolfBerries(*this, x, y);
             break;
         case HOGWEED:
-            o = new Hogweed(*this, x, y);
+            o = new Antelope(*this, x, y);
             break;
         case WOLF:
             o = new Wolf(*this, x, y);
