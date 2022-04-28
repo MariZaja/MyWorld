@@ -65,3 +65,7 @@ int Organism::getOrganismY() const {
 int Organism::getOrganismX() const{
     return organismX;
 }
+
+void Organism::forceBoost(int f) {
+    force += f;
+}

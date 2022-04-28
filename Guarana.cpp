@@ -9,6 +9,11 @@ Guarana::Guarana(World &w, int x, int y) : Plant(w, x, y) {
     ID = 2;
 }
 
+bool Guarana::collision(Organism *o) {
+    o->forceBoost(3);
+    return Organism::collision(o);
+}
+
 void Guarana::draw() {
     std::cout<< 'g';
 }

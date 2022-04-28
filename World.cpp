@@ -130,7 +130,7 @@ void World::setNewOrganism(int x, int y, int number) {
             o = new WolfBerries(*this, x, y);
             break;
         case HOGWEED:
-            o = new Antelope(*this, x, y);
+            o = new Hogweed(*this, x, y);
             break;
         case WOLF:
             o = new Wolf(*this, x, y);
