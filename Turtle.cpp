@@ -17,6 +17,13 @@ void Turtle::action() {
     }
 }
 
+bool Turtle::colision(Organism *o) {
+    if (o->getForce() < 5){
+        return true;
+    }
+    return Organism::colision(o);
+}
+
 void Turtle::draw() {
     std::cout << 'u';
 }
