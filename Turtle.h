@@ -8,7 +8,7 @@
 
 class Turtle: public Animal {
     void action() override;
-    bool colision(Organism* o) override;
+    bool collision(Organism* o) override;
     void draw() override;
     void setDirection(int d) override;
 public:

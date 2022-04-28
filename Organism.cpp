@@ -9,7 +9,7 @@ Organism::Organism(World &w, int x, int y)
     born = world.getAge();
 }
 
-bool Organism::colision(Organism *o) {
+bool Organism::collision(Organism *o) {
     if (o->getForce() > this->getForce()){
         world.deleteOrganism(organismX, organismY);
     }

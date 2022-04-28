@@ -161,7 +161,7 @@ void World::move(int fromX, int fromY, int toX, int toY) {
         organisms[to]->setPosition(toX, toY);
     }
     else if(organisms[to] != NULL){
-        if (!organisms[to]->colision(organisms[from])){
+        if (!organisms[to]->collision(organisms[from])){
             move(fromX, fromY, toX, toY);
         }
     }

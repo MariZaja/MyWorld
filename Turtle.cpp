@@ -17,11 +17,11 @@ void Turtle::action() {
     }
 }
 
-bool Turtle::colision(Organism *o) {
+bool Turtle::collision(Organism *o) {
     if (o->getForce() < 5){
         return true;
     }
-    return Organism::colision(o);
+    return Organism::collision(o);
 }
 
 void Turtle::draw() {
