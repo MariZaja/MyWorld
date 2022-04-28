@@ -7,6 +7,7 @@
 #include "Plant.h"
 
 class WolfBerries: public Plant {
+    bool collision(Organism* o) override;
     void draw() override;
     void setDirection(int d) override;
 public:
