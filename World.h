@@ -27,6 +27,9 @@ class World {
     void setArea();
     void printArea();
     bool action();
+    char menu();
+    void save();
+    void load();
 public:
     Organism** organisms;
     World();

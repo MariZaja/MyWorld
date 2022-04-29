@@ -26,11 +26,18 @@ World::World()
     srand (time(NULL));
     end = false;
     console = new Console;
-    organisms = new Organism*[worldX*worldY];
     h = new Human(*this, 0, 0);
-    organismsIniciative[h->getInitiative()].push_back(h);
-    for(int i = 0; i < worldX*worldY; i++) {
-        organisms[i] = NULL;
+    if (menu() == 'n'){
+        std::cout << "Set world width:";
+        std::cin >> worldX;
+        std::cout << "Set world height:";
+        std::cin >> worldY;
+        organisms = new Organism*[worldX*worldY];
+        organismsIniciative[h->getInitiative()].push_back(h);
+        for(int i = 0; i < worldX*worldY; i++) {
+            organisms[i] = NULL;
+        }
+        setArea();
     }
     else{ load(); }
     std::cout << "World created" << std::endl;
@@ -42,6 +49,13 @@ World::~World(){
     delete console;
     delete[] organisms;
     std::cout << "World destroyed" << std::endl;
+}
+
+char World::menu() {
+    char menu;
+    std::cout << "n - new world, l - load world from file" << std::endl;
+    std::cin >> menu;
+    return menu;
 }
 
 bool World::action() {
