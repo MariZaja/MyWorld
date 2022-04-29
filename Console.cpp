@@ -1,5 +1,7 @@
 #include "Console.h"
 
+enum instructions{POWER = -1, SAVE = 4};
+
 Console::Console() {
     instruction = 0;
     power = 0;
@@ -9,7 +11,10 @@ bool Console::readInstruction() {
     int ch = _getch();
     if (ch == 104){
         power = 5;
-        instruction = -1;
+        instruction = POWER;
+    }
+    else if (ch == 115){
+        instruction = SAVE;
     }
     else if (ch == 224) {
         ch = _getch();

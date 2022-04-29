@@ -10,6 +10,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <algorithm>
+#include <fstream>
 #include "Organism.h"
 #include "Console.h"
 
@@ -28,7 +29,7 @@ class World {
     bool action();
 public:
     Organism** organisms;
-    World(int x, int y);
+    World();
     ~World();
     void start();
     void commentary();

@@ -16,12 +16,13 @@
 #include "Turtle.h"
 #include "Antelope.h"
 
+
 #define START_NUMBER_OF_ORGANISMS 100
 #define DIFFRENT_ORGANISMS 10
 enum organismID {GRASS, DANDELION, GUARANA, WOLFBERRIES, HOGWEED, WOLF, SHEEP, FOX, TURTLE, ANTELOPE};
 
-World::World(int x, int y)
-    : worldX{ x }, worldY{ y }, worldAge{ 1 } {
+World::World()
+    : worldAge{ 1 } {
     srand (time(NULL));
     end = false;
     console = new Console;
@@ -31,7 +32,7 @@ World::World(int x, int y)
     for(int i = 0; i < worldX*worldY; i++) {
         organisms[i] = NULL;
     }
-    setArea();
+    else{ load(); }
     std::cout << "World created" << std::endl;
     //standardowe organizmy
 }
@@ -51,7 +52,8 @@ bool World::action() {
         return true;
     }
     if (console->readInstruction()) {
-        h->setDirection(console->getInstruction());
+        if (console->getInstruction() == 4) { save(); }
+        else { h->setDirection(console->getInstruction()); }
         h->setPower(console->getPower());
 
         system("cls");
@@ -157,7 +159,7 @@ void World::setNewOrganism(int x, int y, int number) {
 void World::move(int fromX, int fromY, int toX, int toY) {
     int from = fromX*worldY+fromY;
     int to = toX*worldY+toY;
-    if (organisms[to] == NULL && checkPosition(toX, toY)){
+    if (organisms[to] == NULL && checkPosition(toX, toY) && organisms[from] != NULL){
         organisms[to] = organisms[from];
         organisms[from] = NULL;
         organisms[to]->setPosition(toX, toY);
@@ -195,4 +197,35 @@ void World::deleteOrganism(int x, int y) {
         }
     }
     organisms[x*worldY+y] = NULL;
+}
+
+void World::save() {
+    std::fstream file;
+    std::cout << "Podan nazwe pliku:\n";
+    std::string name;
+    std::cin>>name;
+    file.open(name, std::ios::out | std::ios::trunc);
+    file << this->worldAge<<"\n";
+    file << this->worldX << " " << this->worldY << "\n";
+    for (int i = 0; i < this->worldX*this->worldY; i++)
+    {
+        if (this->organisms[i] != NULL)
+        {
+            file << this->organisms[i]->getID() << " ";
+            file << this->organisms[i]->getAge() << " ";
+            file << this->organisms[i]->getForce() << " ";
+            file << this->organisms[i]->getInitiative() << " ";
+            //if (this->organisms[i] == this->h)file << this->h->getPowerDelay() << " ";
+            file << "\n";
+        }
+        else
+        {
+            file << "0\n";
+        }
+    }
+    file.close();
+}
+
+void World::load() {
+
 }
