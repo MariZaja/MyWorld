@@ -9,6 +9,7 @@ bool Console::readInstruction() {
     int ch = _getch();
     if (ch == 104){
         power = 5;
+        instruction = -1;
     }
     else if (ch == 224) {
         ch = _getch();

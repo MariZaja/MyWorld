@@ -9,6 +9,8 @@ Human::Human(World &w, int x, int y) : Animal(w, x, y) {
     initiative = 4;
     direction = 0;
     ID = 10;
+    powerDelay = 0;
+    power = 0;
 }
 
 void Human::action() {
@@ -37,5 +39,7 @@ void Human::setDirection(int d) {
 }
 
 void Human::setPower(int p) {
-    force = 5 + p;
+    if (powerDelay == 0){ force = force + p; }
+    else { powerDelay -= 1; force = force - 1 ;}
+    if (p == 1) { powerDelay = 5; }
 }

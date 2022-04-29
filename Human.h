@@ -8,6 +8,7 @@
 
 class Human: public Animal {
     int direction;
+    int powerDelay;
     void action() override;
     void draw() override;
 public:
