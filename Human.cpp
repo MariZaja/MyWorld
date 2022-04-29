@@ -10,7 +10,6 @@ Human::Human(World &w, int x, int y) : Animal(w, x, y) {
     direction = 0;
     ID = 10;
     powerDelay = 0;
-    power = 0;
 }
 
 void Human::action() {
