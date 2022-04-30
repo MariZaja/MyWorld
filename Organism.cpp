@@ -78,3 +78,15 @@ void Organism::multiply(int x, int y) {
     }
     if (world.organisms[toX*world.getWorldY()+toY] == NULL){ world.setNewOrganism(toX, toY, ID); }
 }
+
+void Organism::setForce(int f) {
+    force = f;
+}
+
+void Organism::setAge(int a) {
+    born = a;
+}
+
+void Organism::setInitiative(int i) {
+    initiative = i;
+}

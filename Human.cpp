@@ -48,3 +48,19 @@ void Human::forceBoost(int f) {
     tempForce += f;
     Organism::forceBoost(f);
 }
+
+int Human::getPowerDelay() {
+    return powerDelay;
+}
+
+int Human::getTempForce() {
+    return tempForce;
+}
+
+void Human::setPowerDelay(int d) {
+    powerDelay = d;
+}
+
+void Human::setTempForce(int t) {
+    tempForce = t;
+}

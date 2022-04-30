@@ -17,6 +17,10 @@ public:
     void forceBoost(int f) override;
     void setDirection(int d);
     void setPower(int p);
+    int getPowerDelay();
+    int getTempForce();
+    void setPowerDelay(int d);
+    void setTempForce(int t);
 };
 
 #endif //MYWORLD_HUMAN_H

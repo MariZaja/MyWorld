@@ -20,6 +20,9 @@ public:
     int getForce() const;
     int getInitiative() const;
     int getAge() const;
+    void setForce(int f);
+    void setInitiative(int i);
+    void setAge(int a);
     int getID() const;
     int getOrganismX() const;
     int getOrganismY() const;
