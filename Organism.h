@@ -23,8 +23,7 @@ public:
     int getID() const;
     int getOrganismX() const;
     int getOrganismY() const;
-    void forceBoost(int f);
-    virtual void setPower(int p);
+    virtual void forceBoost(int f);
     Organism(World& w, int x, int y);
     ~Organism();
     void multiply(int x, int y);

@@ -3,6 +3,7 @@
 //
 
 #include "World.h"
+#include "Organism.h"
 #include "Human.h"
 #include "Plant.h"
 #include "Grass.h"
@@ -185,10 +186,6 @@ void World::move(int fromX, int fromY, int toX, int toY) {
     }
 }
 
-int World::getWorldX() {
-    return worldX;
-}
-
 int World::getWorldY() {
     return worldY;
 }
@@ -215,7 +212,7 @@ void World::deleteOrganism(int x, int y) {
 
 void World::save() {
     std::fstream file;
-    std::cout << "Podan nazwe pliku:\n";
+    std::cout << "Podaj nazwe pliku:\n";
     std::string name;
     std::cin>>name;
     file.open(name, std::ios::out | std::ios::trunc);

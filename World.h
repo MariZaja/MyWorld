@@ -1,7 +1,7 @@
 //
 // Created by Marysia on 10.04.2022.
 //
-
+#pragma once
 #ifndef MYWORLD_WORLD_H
 #define MYWORLD_WORLD_H
 #include <iostream>
@@ -11,18 +11,18 @@
 #include <time.h>
 #include <algorithm>
 #include <fstream>
-#include "Organism.h"
 #include "Console.h"
 
 #define MAX_INITIATIVE 8
 
 class Organism;
+class Human;
 
 class World {
     int worldX, worldY;
     int worldAge;
     Console* console;
-    Organism* h;
+    Human* h;
     std::vector< Organism* > organismsIniciative[MAX_INITIATIVE];
     void setArea();
     void printArea();
@@ -38,7 +38,6 @@ public:
     void commentary();
     void move(int fromX, int fromY, int toX, int toY);
     void deleteOrganism(int x, int y);
-    int getWorldX();
     int getWorldY();
     int getAge();
     bool checkPosition(int x, int y);

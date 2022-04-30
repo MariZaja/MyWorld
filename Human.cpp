@@ -6,6 +6,7 @@
 
 Human::Human(World &w, int x, int y) : Animal(w, x, y) {
     force = 5;
+    tempForce = 5;
     initiative = 4;
     direction = 0;
     ID = 10;
@@ -38,7 +39,12 @@ void Human::setDirection(int d) {
 }
 
 void Human::setPower(int p) {
-    if (powerDelay == 0){ force = force + p; }
-    else { powerDelay -= 1; force = force - 1 ;}
+    if (powerDelay == 0){ force = tempForce + p; }
+    else { powerDelay -= 1; force = tempForce ;}
     if (p == 1) { powerDelay = 5; }
+}
+
+void Human::forceBoost(int f) {
+    tempForce += f;
+    Organism::forceBoost(f);
 }
