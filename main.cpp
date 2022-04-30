@@ -5,10 +5,10 @@ int main() {
     World myWorld;
     myWorld.start();
     std::cout << "The end\n";
-    std::cout << "Click 'q' to quit game\n";
-    char com = ' ';
-    while(com != 'q'){
-        std::cin >> com;
+    std::cout << "Press 'q' to quit game\n";
+    char pressed = ' ';
+    while(pressed != 'q'){
+        std::cin >> pressed;
     }
     return 0;
 }

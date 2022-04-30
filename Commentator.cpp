@@ -12,6 +12,11 @@ Commentator::Commentator() {
     organizmName[7] = "Fox"; organizmName[8] = "Turtle"; organizmName[9] = "Antelope"; organizmName[10] = "Human";
 }
 
+void Commentator::author() {
+    std::cout << "Author: Maria Zajączkowska s188991" << std::endl;
+    std::cout << std::endl;
+}
+
 void Commentator::addCommentary(int action, int winner, int loser) {
     std::string s = "";
     count++;

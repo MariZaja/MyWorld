@@ -18,7 +18,7 @@
 #include "Antelope.h"
 
 
-#define START_NUMBER_OF_ORGANISMS 25
+#define START_NUMBER_OF_ORGANISMS 100
 #define DIFFRENT_ORGANISMS 10
 enum organismID {GRASS, DANDELION, GUARANA, WOLFBERRIES, HOGWEED, WOLF, SHEEP, FOX, TURTLE, ANTELOPE, HUMAN, NOTHING};
 
@@ -50,7 +50,6 @@ World::~World(){
     delete h;
     delete console;
     delete[] organisms;
-    std::cout << "World destroyed" << std::endl;
 }
 
 char World::menu() {
@@ -64,6 +63,7 @@ bool World::action() {
     if (end){return false;}
     if (worldAge == 1){
         system("cls");
+        com->author();
         printArea();
         return true;
     }
@@ -73,6 +73,7 @@ bool World::action() {
         h->setPower(console->getPower());
 
         system("cls");
+        com->author();
 
         for (int i=MAX_INITIATIVE-1; i>=0; i--){
             int size = organismsIniciative[i].size();

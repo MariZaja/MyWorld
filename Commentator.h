@@ -14,6 +14,7 @@ class Commentator {
     std::string organizmName[11];
 public:
     Commentator();
+    void author();
     void addCommentary(int action, int winner, int loser);
     void print();
     void reset();
