@@ -11,18 +11,22 @@ Organism::Organism(World &w, int x, int y)
 
 bool Organism::collision(Organism *o) {
     if (o->getForce() > this->getForce()){
+        world.setCommentary(0, o->getID(), this->getID());
         world.deleteOrganism(organismX, organismY);
     }
     else if(o->getForce() < this->getForce()){
+        world.setCommentary(0, this->getID(), o->getID());
         world.deleteOrganism(o->getOrganismX(), o->getOrganismY());
         return true;
     }
     else if (o->getForce() == this->getForce()){
         if(o->getID() == ID){
+            world.setCommentary(1, o->getID(), this->getID());
             o->multiply(organismX, organismY);
             return true;
         }
         else{
+            world.setCommentary(0, o->getID(), this->getID());
             world.deleteOrganism(organismX, organismY);
         }
     }

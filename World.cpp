@@ -22,11 +22,13 @@
 #define DIFFRENT_ORGANISMS 10
 enum organismID {GRASS, DANDELION, GUARANA, WOLFBERRIES, HOGWEED, WOLF, SHEEP, FOX, TURTLE, ANTELOPE, HUMAN, NOTHING};
 
+
 World::World()
     : worldAge{ 1 } {
     srand (time(NULL));
     end = false;
     console = new Console;
+    com = new Commentator;
     h = new Human(*this, 0, 0);
     if (menu() == 'n'){
         std::cout << "Set world width:";
@@ -42,7 +44,6 @@ World::World()
     }
     else{ load(); }
     std::cout << "World created" << std::endl;
-    //standardowe organizmy
 }
 
 World::~World(){
@@ -109,13 +110,15 @@ void World::commentary() {
     for (int i=0; i<24; i++){
         std::cout << "*";
     }
-    std::cout << '\n' << "komentarz" << std::endl;
+    std::cout << std::endl;
+    com->print();
     std::cout << '\n' << "sila: " << h->getForce() << std::endl;
     std::cout << '\n' << "kierunek: " << console->getInstruction() << std::endl;
     for (int i=0; i<24; i++){
         std::cout << "*";
     }
     std::cout << std::endl;
+    com->reset();
 }
 
 void World::printArea() {
@@ -284,4 +287,8 @@ void World::load() {
             }
         }
     }
+}
+
+void World::setCommentary(int action, int winner, int loser) {
+    com->addCommentary(action, winner, loser);
 }
