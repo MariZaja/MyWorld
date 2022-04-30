@@ -18,9 +18,9 @@
 #include "Antelope.h"
 
 
-#define START_NUMBER_OF_ORGANISMS 100
+#define START_NUMBER_OF_ORGANISMS 25
 #define DIFFRENT_ORGANISMS 10
-enum organismID {GRASS, DANDELION, GUARANA, WOLFBERRIES, HOGWEED, WOLF, SHEEP, FOX, TURTLE, ANTELOPE};
+enum organismID {GRASS, DANDELION, GUARANA, WOLFBERRIES, HOGWEED, WOLF, SHEEP, FOX, TURTLE, ANTELOPE, HUMAN, NOTHING};
 
 World::World()
     : worldAge{ 1 } {
@@ -226,17 +226,62 @@ void World::save() {
             file << this->organisms[i]->getAge() << " ";
             file << this->organisms[i]->getForce() << " ";
             file << this->organisms[i]->getInitiative() << " ";
-            //if (this->organisms[i] == this->h)file << this->h->getPowerDelay() << " ";
+            if (this->organisms[i] == this->h)file << this->h->getPowerDelay() << " " << this->h->getTempForce() << " ";
             file << "\n";
         }
         else
         {
-            file << "0\n";
+            file << 11 << "\n";
         }
     }
     file.close();
 }
 
 void World::load() {
-
+    std::fstream file;
+    std::cout << "Podaj nazwe pliku\n";
+    std::string name;
+    std::cin >> name;
+    file.open(name, std::ios::in);
+    if (!file.good())return;
+    file >> this->worldAge;
+    file >> this->worldX;
+    file >> this->worldY;
+    this->organisms = new Organism*[this->worldX*this->worldY];
+    organismsIniciative[h->getInitiative()].push_back(h);
+    for (int i = 0; i < this->worldX*this->worldY; i++)this->organisms[i] = NULL;
+    int id, age, force, initiative,delay,temp;
+    Organism* o = NULL;
+    for (int x = 0; x < this->worldX; x++){
+        for (int y = 0; y < this->worldY; y++){
+            file >> id;
+            if (id == NOTHING){
+                this->organisms[x*this->worldY+y] = NULL;
+                continue;
+            }
+            file >> age >> force >> initiative;
+            if (id != HUMAN){
+                this->setNewOrganism(x, y, id);
+                o = organisms[x*this->worldY+y];
+                if (o != NULL){
+                    o->setAge(age);
+                    o->setForce(force);
+                    o->setInitiative(initiative);
+                }
+                else{
+                    std::cout << "Error";
+                }
+            }
+            else{
+                file >> delay >> temp;
+                organisms[x*this->worldY+y] = h;
+                h->setPosition(x, y);
+                h->setAge(age);
+                h->setForce(force);
+                h->setInitiative(initiative);
+                h->setPowerDelay(delay);
+                h->setTempForce(temp);
+            }
+        }
+    }
 }
