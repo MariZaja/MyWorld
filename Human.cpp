@@ -39,8 +39,9 @@ void Human::setDirection(int d) {
 }
 
 void Human::setPower(int p) {
+    if (p != 0){ world.setCommentary(2, 0, 0); }
     if (powerDelay == 0){ force = tempForce + p; }
-    else { powerDelay -= 1; force = tempForce ;}
+    else { powerDelay -= 1; force = tempForce; }
     if (p == 1) { powerDelay = 5; }
 }
 

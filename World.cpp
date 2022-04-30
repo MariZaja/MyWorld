@@ -112,8 +112,6 @@ void World::commentary() {
     }
     std::cout << std::endl;
     com->print();
-    std::cout << '\n' << "sila: " << h->getForce() << std::endl;
-    std::cout << '\n' << "kierunek: " << console->getInstruction() << std::endl;
     for (int i=0; i<24; i++){
         std::cout << "*";
     }

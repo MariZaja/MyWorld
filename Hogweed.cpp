@@ -19,6 +19,7 @@ void Hogweed::action() {
             target = (organismX+a)*world.getWorldY()+(organismY+b);
             if (world.checkPosition(organismX+a, organismY+b)){
                 if (world.organisms[target] != NULL && world.organisms[target]->getID()>IF_ANIMAL){
+                    world.setCommentary(0, this->getID(), world.organisms[target]->getID());
                     world.deleteOrganism(organismX+a, organismY+b);
                 }
             }b++;

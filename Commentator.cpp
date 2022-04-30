@@ -36,11 +36,14 @@ void Commentator::addCommentary(int action, int winner, int loser) {
             s += " was born!";
             commentaries.push_back(s);
             break;
+        case 2:
+            s += "Human power ON!";
+            commentaries.push_back(s);
+            break;
     }
 }
 
 void Commentator::print() {
-    std::cout << count << std::endl;
     for (int i=0; i < count; i++){
         std::cout << commentaries[i] << std::endl;
     }
